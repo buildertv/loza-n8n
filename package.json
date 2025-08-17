@@ -1,7 +1,7 @@
 {
-  "name": "n8n-nodes-zola-fake",
-  "version": "0.0.39",
-  "description": "Các node hỗ trợ Zalo cho n8n Thong",
+  "name": "n8n-nodes-loza",
+  "version": "0.0.1",
+  "description": "Các node hỗ trợ Zalo cho n8n",
   "keywords": [
     "n8n-community-node-package",
     "zalo-nodes",
@@ -10,14 +10,14 @@
     "n8n"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/mrtomlx/zola-n8n",
+  "homepage": "https://hoangtuan.net",
   "author": {
-    "name": "hoangthong",
-    "email": "thongth1992@gmail.com"
+    "name": "hoangtuan",
+    "email": "ad@hoangtuan.net"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrtomlx/zola-n8n.git"
+    "url": "git+https://github.com/buildertv/loza-n8n.git"
   },
   "engines": {
     "node": ">=18.10",
