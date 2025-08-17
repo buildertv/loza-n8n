@@ -1,0 +1,93 @@
+{
+  "name": "n8n-nodes-zola-fake",
+  "version": "0.0.39",
+  "description": "Các node hỗ trợ Zalo cho n8n Thong",
+  "keywords": [
+    "n8n-community-node-package",
+    "zalo-nodes",
+    "zalo",
+    "tools",
+    "n8n"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mrtomlx/zola-n8n",
+  "author": {
+    "name": "hoangthong",
+    "email": "thongth1992@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrtomlx/zola-n8n.git"
+  },
+  "engines": {
+    "node": ">=18.10",
+    "pnpm": ">=9.1"
+  },
+  "packageManager": "pnpm@9.1.4",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "node ./scripts/postinstall.js",
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes --write",
+    "lint": "eslint nodes package.json",
+    "lintfix": "eslint nodes package.json --fix",
+    "prepublishOnly": "",
+    "watch": "concurrently \"pnpm run watch\" \"pnpm run start:n8n\"",
+    "start:n8n": "nodemon --watch dist --exec \"npx n8n start\""
+  },
+  "files": [
+    "dist",
+    "scripts"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/N8nZaloApi.credentials.js",
+      "dist/credentials/Redis.credentials.js",
+      "dist/credentials/Postgres.credentials.js",
+      "dist/credentials/MySql.credentials.js",
+      "dist/credentials/ZaloTTSApi.credentials.js",
+      "dist/credentials/ElevenLabsApi.credentials.js",
+      "dist/credentials/ZaloApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/ZaloLoginByQr/ZaloLoginByQr.node.js",
+      "dist/nodes/ZaloSendMessage/ZaloSendMessage.node.js",
+      "dist/nodes/ZaloUser/ZaloUser.node.js",
+      "dist/nodes/ZaloGroup/ZaloGroup.node.js",
+      "dist/nodes/ZaloMessageTrigger/ZaloMessageTrigger.node.js",
+      "dist/nodes/ZaloFriendTrigger/ZaloFriendTrigger.node.js",
+      "dist/nodes/ZaloGomTin/ZaloGomTin.node.js",
+      "dist/nodes/ZaloDecrypt/ZaloDecrypt.node.js",
+      "dist/nodes/ZaloGetSecretKey/ZaloGetSecretKey.node.js"
+    ]
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "pnpm": "^10.6.5",
+    "redis": "^4.6.13",
+    "pg": "^8.11.3",
+    "mysql2": "^3.6.5",
+    "crypto-js": "^4.2.0",
+    "form-data": "^4.0.0",
+    "pako": "^2.1.0",
+    "semver": "^7.6.3",
+    "sharp": "^0.33.4",
+    "spark-md5": "^3.0.2",
+    "tough-cookie": "^5.0.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/request-promise-native": "^1.0.17",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint-plugin-n8n-nodes-base": "^1.11.0",
+    "gulp": "^4.0.2",
+    "n8n-core": "*",
+    "n8n-workflow": "*",
+    "prettier": "^2.7.1",
+    "typescript": "~4.8.4"
+  }
+}
